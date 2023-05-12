@@ -1,30 +1,28 @@
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
+from django.db import IntegrityError
+from django.db.models import Avg
 from django.shortcuts import get_object_or_404
-from rest_framework import filters, permissions, viewsets, status
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, permissions, status, viewsets
 from rest_framework.decorators import action
+from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.db import IntegrityError
 from rest_framework.views import APIView
-from .mixins import CreateListDeleteMixinSet
 from rest_framework_simplejwt.tokens import RefreshToken
-from reviews.models import User, Title, Category, Genre, Review
-from api.serializers import (TitleSerializer, GenreSerializer,
-                             CategorySerializer)
+from reviews.models import Category, Genre, Review, Title, User
 
 from api_yamdb.settings import OUR_EMAIL
-from django_filters.rest_framework import DjangoFilterBackend
+
 from .filters import TitleFilter
-from django.db.models import Avg
-
-from .permissions import (IsAdmin, IsAdminOrReadOnly,
-                          IsAdminModeratorOwnerOrReadOnly)
-from .serializers import (TokenSerializer, UserSerializer, SignUpSerializer)
-from .serializers import (CommentSerializer, ReviewSerializer,
-                          ReadOnlyTitleSerializer)
-
-from rest_framework.pagination import LimitOffsetPagination
+from .mixins import CreateListDeleteMixinSet
+from .permissions import (IsAdmin, IsAdminModeratorOwnerOrReadOnly,
+                          IsAdminOrReadOnly)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, ReadOnlyTitleSerializer,
+                          ReviewSerializer, SignUpSerializer, TitleSerializer,
+                          TokenSerializer, UserSerializer)
 
 
 class TitleViewSet(viewsets.ModelViewSet):
