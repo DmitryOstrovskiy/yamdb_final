@@ -1,4 +1,4 @@
-![Yamdb Workflow Status](https://github.com/dmitryostrovski/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master&event=push)
+![Yamdb Workflow Status](https://github.com/dmitryostrovskiy/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master&event=push)
 ### CI и CD проекта api_yamdb
 Идея CI и CD состоит в том, чтобы после внесения изменений в любую часть кода проводилось тестирование не только того модуля, который был изменён, но и всего проекта. Это сэкономит время, предупредив и заранее выявив проблемы, которые иначе проявились бы только при финальной сборке или тестировании. Чем раньше обнаруживается проблема — тем проще её решить. 
 Последовательность действий CI и CD:
@@ -42,3 +42,6 @@ Windows: ```source venv\scripts\activate```; Linux/Mac: ```sorce venv/bin/activa
 
 - Запустить проект:
 ```python manage.py runserver```
+
+### Проект завернут по адресу:
+```http://158.160.98.36/```
