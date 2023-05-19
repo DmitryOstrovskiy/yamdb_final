@@ -43,5 +43,5 @@ Windows: ```source venv\scripts\activate```; Linux/Mac: ```sorce venv/bin/activa
 - Запустить проект:
 ```python manage.py runserver```
 
-### Проект завернут по адресу:
-```http://158.160.98.36/```
+### Проект развернут по адресу:
+```http://158.160.98.36/redoc```
